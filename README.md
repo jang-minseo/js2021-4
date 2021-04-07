@@ -39,8 +39,6 @@ reverse은 배열을 역순으로 재배치.
 
 sort는 배열을 정렬
 
-array.slice
-
 join은 배열값들 사이에 원하는 문자를 삽입하는 함수
 
 
