@@ -1,9 +1,7 @@
-/*
-console.log('Hello World...!');
-console.log('Hello World...!');
-console.log('Hello World...!');
-*/
+let product = {
+    제품명 : '건조망고',
+    유형: '당절임',
+    원산기: '필리핀'
+}
 
-const con1 = "문자열 상수";
-con1 = "";
-console.log(con1);
+console.log(product);
