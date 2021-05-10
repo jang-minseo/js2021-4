@@ -1,5 +1,79 @@
 # 장민서 [201840130]
 
+## [05월 04일]
+
+표준 내장 객체
+
+기본 자료형 숫자, 문자열, 불
+
+    let number = 20;
+    let string = '안녕';
+    let boolean = true;
+
+객체 자료형 숫자, 문자열, 불
+
+    let number = new Number(20);
+    let string = new String('안녕');
+    let boolean = new Boolean(true);
+
+기본 자료형과 객체 자료형의 차이
+- 기본 자료형의 속성 또는 메소드를 사용할 때 기본 자료형이 자동으로 객체 변환이됨. 즉, 기본 자료형과 객체 자료형 모두 속성과 메소드를 사용함
+- 차이점 : 기본 자료형은 객체가 아니므로 속성과 메소드를 추가할 수 없음
+
+<br>
+기본 자료형에 프로토타입으로 메소드 추가
+
+// 변수 생성
+
+    let primitiveNumber = 20;
+//메소드 생성
+    
+    Number.prototype.method = function () {
+        return 'Primitive Method';
+    }    
+
+※ Number 객체
+- 자바스크립트에서 숫자를 표현할 때 사용
+
+메소드
+- toExponential() - 숫자를 ★지수★ 표시로 나타낸 문자열을 리턴
+- toFixed() - 숫자를 고정소수점 표시로 나타낸 문자열을 리턴
+- toPrecision() - 숫자를 길이에 따라 지수 표시 또는 고정소수점 표시로 나타낸 문자열을 리턴
+
+toFixed() 메소드를 이용해 소수점 자릿수를 짜르는 방법
+
+    let number = 273.5210332
+    console.log(number.toFixed(1));
+
+    결과: 273.1
+
+Number 생성자 함수의 속성
+- MAX_VALUE
+- MIN_VALUE
+- NaN
+- POSITIVE_INFINITY
+- NEGATIVE_INFINITY
+
+※ String 객체
+
+속성과 메소드
+- length - 문자열의 길이를 나타냄
+- String 객체의 메소드는 변경된 값을 리턴함
+
+메소드 활용
+- indexOf() 메소드 : 특정 문자열이 있는지 확인, 위치를 리턴함. 문자열이 포함되어 있지 않을 때는 -1을 리턴
+- split() 메소드를 사용하면 특정한 기호를 기반으로 문자열을 분해함
+
+
+
+
+
+
+
+
+
+
+
 ## [04월 27일]
 표준 내장 함수
 - clearInterval() 함수

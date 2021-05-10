@@ -1,7 +1,3 @@
-let product = {
-    제품명 : '건조망고',
-    유형: '당절임',
-    원산기: '필리핀'
-}
+let foo = "안녕하세요. 좋은 아침입니다.";
 
-console.log(product);
+if(foo.indexOF('아침') >= 0);
