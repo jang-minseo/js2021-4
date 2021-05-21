@@ -1,4 +1,105 @@
 # 장민서 [201840130]
+## [05월 18일]
+
+문자열 자료형의 전역 변수
+-  _ _filename : 현재 실행 중인 코드이 파일 경로를 나타냄
+- _ _dirname : 현재 실행 중인 코드의 폴더 경로를 나타냄
+
+※ Node.js는 process 전역 객체를 제공
+-
+※ process 객체는 프로세스 정보를 제공하며, 제어할 수 있게 하는 객체
+-
+
+※ process 객체의 속성
+- env : 컴퓨터 환경 정보를 나타냄
+- version : Node.js 버전을 나타냄
+- versions : Node.js와 종속된 프로그램 버전을 나타냄
+- arch : 프로세서의 아키텍처를 나타냄
+- platform : 플랫폼을 나타냄
+
+※ process 객체의 메소드
+- exit([exicCode = 0]) : 프로그램을 종료
+- memoryUsage() : 메모리 사용 정보 객체를 리턴
+- uptime() : 현재 프로그램이 실행된 시간을 리턴
+
+※ Node.js가 제공하는 객체의 이벤트 : https://nodejs.org/en/docs/
+
+※ process 객체 : https://nodejs.org/dist/latest-v6.x/docs/api/process.html
+
+※ os 모듈의 메소드
+- hostname() : 운영체제의 호스트 이름을 리턴
+- type() : 운영체제의 이름을 리턴
+- platform() : 운영체제의 플랫폼을 리턴
+- arch() : 운영체제의 아키텍처를 리턴
+- release() : 운영체제의 버전을 리턴
+- uptime() : 운영체제가 실행된 시간을 리턴
+- loadavg() : 로드 에버리지 정보를 담은 배열을 리턴
+- totalmem() : 시스템의 총 메모리를 리턴
+- freemem() : 시스템의 사용 가능한 메모리를 리턴
+- cpus() : CPU의 정보를 담은 객체를 리턴
+- getNetworkInterfaces() : 네트워크 인터페이스의 정보를 담은 배열을 리턴
+
+※ Url 모듈의 메소드
+- parse(urlStr [, ParseQueryString = false, slashesDenoteHost = false]) : URL 문자열을 URL 객체로 변환하여 리턴
+- format(urlObj) : URL 객체를 URL 문자열로 변환하여 리턴
+- resolve(from,to) : 매게 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
+
+※ File System 모듈
+※ 파일읽기
+- 실행할 자바스크립트 파일이 있는 폴더에 textfile.txt 이름의 파일을 생성
+
+※ 파일 읽기의 메소드
+- fs.readFileSync(<파일 이름>) : 동기적으로 파일을 읽음
+- fs.readFile(<파일 이름>,<콜백 함수>) : 비동기적으로 파일을 읽음
+
+※ 비동기 처리의 장점
+- 웹 서버를 C++ 프로그래밍 언어로 만들면 무척 빠르지만, 개발과 유지 보수는 어려움
+- 전 세계 웹 서비스 기업도 C++로 웹 서버를 개발하지 않고 PHP, 자바, 루비, 파이썬 Node.js 등 프로그래밍 언어로 개발
+- 프로그래밍 언어 자체는 느리지만 큰의미가 없다고 판단해 개발 속도와 유지 보수성이 좋은 프로그래밍 언어를 사용
+- 자바스크립트 프로그맹 언어는 C++,자바 보다 느리지만 Node.js를 사용하면 손쉽게 비동기 처리를 구현하여 빠른 처리가 가능
+
+※ 파일 쓰기
+메소드
+- fs.writeFileSync(<파일 이름>,<문자열>) : 동기적으로 파일을 씀
+- fs.writeFile(<파일 이름>,<문자열>,<콜백 함수>) : 비동기적으로 파일을 씀
+
+※ 노드 패키지 매니저
+- Node.js는 npm패키지 매니저를 사용
+
+※ request 모듈
+- 웹 요청을 쉽게 만들어 주는 모듈로 외부 모듈임
+
+설치 방법 : npm install request 를 터미널에 입력
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## [05월 11일]
 ※ Date 객체
