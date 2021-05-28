@@ -1,4 +1,146 @@
 # 장민서 [201840130]
+
+## [05월 25일]
+
+# 응답과 요청
+
+### express 모듈 설치
+
+- $ npm install express@4
+
+- express 모듈의 기본 메소드
+    - express() : 서버 애플리케이션 객체를 생성
+    - app.use() : 요청이 왔을 때 실행할 함수를 지정
+    - app.listen() : 서버를 실행
+
+---
+
+### express 모듈로 서버 생성과 실행
+
+```jsx
+// 모듈 추출
+const express = require('express');
+
+// 서버 생성
+const app = express();
+
+//request 이벤트 리스너를 설정
+app.use((request, response) => {
+		response.send('<h1>Hello express</h1>');
+});
+
+// 서버 실행
+app.listen(52273, () => {
+		console.log('Server running at http://127.0.0.1:52273');
+});
+
+```
+
+---
+
+### 페이지 라우팅
+
+- 페이지 라우팅 : 클라이언트 요청에 적절한 페이지를 제공하는 기술
+- express 모듈의 페이지 라우팅 메소드
+    - get(path, callback) : GET 요청이 발생했을 때 이벤트 리스너를 지정
+    - post(path, callback) : POST 요청이 발생했을 때 이벤트 리스너를 지정
+    - put(path, callback) : PUT 요청이 발생했을 때 이벤트 리스너를 지정
+    - delete(path, callback) : DELETE 요청이 발생했을 때 이벤트 리스너를 지정
+    - all(path, callback) : 모든 요청이 발생했을 때 이벤트 리스너를 지정
+- 페이지 라우팅을 할 때 토큰을 활용함
+    - ':<토큰 이름>' 형태로 설정
+    - 토큰은 다른 문자열로 변환 입력가능, request 객체의 params 속성으로 전달됨.
+
+### 페이지 라우팅 예제
+
+```jsx
+// 모듈 추출
+const express = require('express');
+
+// 서버 생성
+const app = express();
+
+//request 이벤트 리스너 설정
+app.get('/page/:id', (request, response) => {
+		 // 토큰을 꺼냄
+		const id = request.params.id;
+
+		// 응답
+		response.send(`<h1>'${id} Page</h1>`);
+});
+
+// 서버 실행
+app.listen(52273, () => {
+		console.log('Server running at http://127.0.0.1:52273');
+});
+
+```
+
+### response 객체
+
+- response 객체의 기본 메소드
+    - send() : 데이터 본문을 제공
+        - send() 메소드 : 사용자에게 데이터 본문을 제공
+        - send() 메소드는 가장 마지막에 실행해야 하며, 두 번 실행할 수 없음
+    - status() : 상태 코드를 제공
+    - set() : 헤더를 설정
+
+### response 객체의 기본 메소드 예제
+
+```jsx
+// 모듈 추출
+const express = require('express');
+
+// 서버 생성
+const app = express();
+
+//request 이벤트 리스너 설정
+app.get('*', (request, response) => {
+		 response.set('methodA','ABCDE');
+		 response.set({
+				'methodB1': 'FGHIJ',
+				'methodB2': 'KLMNO'
+});
+
+// 서버 실행
+app.listen(52273, () => {
+		console.log('Server running at http://127.0.0.1:52273');
+});
+```
+
+### HTTP 상태 코드 : 404 Not Found
+
+- 많이 보는 오류
+    - 4XX : 클라이언트 오류 : 400 Bad Request
+    - 5XX : 서버 오류 : 500 Internal Server Error
+
+### 리다이렉트 : 3XX, 특수한 상태 코드
+
+- 웹 브라우저가 리다이렉트를 확인하면 화면을 출력하지 않고, 응답 헤더에 있는 Location 속성을 확인해서 해당 위치로 이동
+- 특정 경로로 웹 브라우저를 인도 할 때 사용
+
+# 미들웨어
+
+### morgan 미들웨어
+
+- express 모듈의 미들웨어로 사용할 수 있는 외부 모듈을 확인
+- 설치 > npm install morgan
+
+### body-parser 미들웨어
+
+- 요청 본문을 분석함
+- 보안에 취약함
+- 설치 > npm install body-parser
+
+# RESTful 웹 서비스 개요
+
+- REST 규정에 맞게 만든 ROA(**Resource Oriented Architecture)**를 따르는 웹 서비스 디자인 표준
+- 예) 사용자 관련 정보
+    - GET /user : 사용자 전체를 조회
+    - GET / user/273 : 273번 사용자를 조회
+    - POST /user : 사용자를 추가
+    - DELETE /user/273 : 273번 사용자를 삭제
+
 ## [05월 18일]
 
 문자열 자료형의 전역 변수
@@ -70,35 +212,6 @@
 - 웹 요청을 쉽게 만들어 주는 모듈로 외부 모듈임
 
 설치 방법 : npm install request 를 터미널에 입력
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## [05월 11일]
