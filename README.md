@@ -51,6 +51,8 @@ app.listen(52273, () => {
     - ':<토큰 이름>' 형태로 설정
     - 토큰은 다른 문자열로 변환 입력가능, request 객체의 params 속성으로 전달됨.
 
+---
+
 ### 페이지 라우팅 예제
 
 ```jsx
@@ -75,7 +77,7 @@ app.listen(52273, () => {
 });
 
 ```
-
+---
 ### response 객체
 
 - response 객체의 기본 메소드
@@ -84,7 +86,7 @@ app.listen(52273, () => {
         - send() 메소드는 가장 마지막에 실행해야 하며, 두 번 실행할 수 없음
     - status() : 상태 코드를 제공
     - set() : 헤더를 설정
-
+---
 ### response 객체의 기본 메소드 예제
 
 ```jsx
@@ -107,31 +109,31 @@ app.listen(52273, () => {
 		console.log('Server running at http://127.0.0.1:52273');
 });
 ```
-
+---
 ### HTTP 상태 코드 : 404 Not Found
 
 - 많이 보는 오류
     - 4XX : 클라이언트 오류 : 400 Bad Request
     - 5XX : 서버 오류 : 500 Internal Server Error
-
+---
 ### 리다이렉트 : 3XX, 특수한 상태 코드
 
 - 웹 브라우저가 리다이렉트를 확인하면 화면을 출력하지 않고, 응답 헤더에 있는 Location 속성을 확인해서 해당 위치로 이동
 - 특정 경로로 웹 브라우저를 인도 할 때 사용
-
+---
 # 미들웨어
 
 ### morgan 미들웨어
 
 - express 모듈의 미들웨어로 사용할 수 있는 외부 모듈을 확인
 - 설치 > npm install morgan
-
+---
 ### body-parser 미들웨어
 
 - 요청 본문을 분석함
 - 보안에 취약함
 - 설치 > npm install body-parser
-
+---
 # RESTful 웹 서비스 개요
 
 - REST 규정에 맞게 만든 ROA(**Resource Oriented Architecture)**를 따르는 웹 서비스 디자인 표준
@@ -140,7 +142,7 @@ app.listen(52273, () => {
     - GET / user/273 : 273번 사용자를 조회
     - POST /user : 사용자를 추가
     - DELETE /user/273 : 273번 사용자를 삭제
-
+---
 ## [05월 18일]
 
 문자열 자료형의 전역 변수
