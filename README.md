@@ -739,4 +739,4 @@ if
 if else
 중첩 조건문
 >요약
-
+nice
